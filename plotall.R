@@ -22,9 +22,9 @@ png("plot1.png", width = 480, height = 480)
         hist(subpower_consumption$Global_active_power, col =  "red", xlab = "Gloal Active Power (kilowatts)", main = "Global Active Power")
 dev.off()
 
+subpower_consumption$datetime <- as.POSIXct(paste(subpower_consumption$Date, subpower_consumption$Time), format="%Y-%m-%d %H:%M:%S")
 png("plot2.png", width = 480, height = 480)
-        subpower_consumption$datetime <- as.POSIXct(paste(subpower_consumption$Date, subpower_consumption$Time), format="%Y-%m-%d %H:%M:%S")
-        png("line_globalactivepower_time.png", width = 480, height = 480)
+        
         plot(subpower_consumption$datetime, subpower_consumption$Global_active_power, type = "l", ylab = "Gloal Active Power (kilowatts)", xlab = "", main = NULL)
         #please note the days are in Portuguese because my R is installed in Portuguese
 
