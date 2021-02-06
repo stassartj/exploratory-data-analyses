@@ -17,7 +17,7 @@ power_consumption <- read_delim("data/household_power_consumption.txt",
 subpower_consumption<- subset(power_consumption, (power_consumption$Date >= as.Date("2007-02-01", "%Y-%M-%d")) & (power_consumption$Date <= as.Date("2007-02-02" , "%Y-%M-%d")))
 
 
-
+par(mfrow = c(1,1))
 png("plot1.png", width = 480, height = 480)
         hist(subpower_consumption$Global_active_power, col =  "red", xlab = "Gloal Active Power (kilowatts)", main = "Global Active Power")
 dev.off()
@@ -35,6 +35,7 @@ png("plot3.png", width = 480, height = 480)
         lines(subpower_consumption$datetime ,subpower_consumption$Sub_metering_1, type = "l")
         lines(subpower_consumption$datetime,  subpower_consumption$Sub_metering_2, type = "l", col = "red")
         lines(subpower_consumption$datetime,  subpower_consumption$Sub_metering_3, type = "l", col = "blue")
+        legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c("black", "red", "blue"))
         #please note the days are in Portuguese because my R is installed in Portuguese
 
 dev.off()
@@ -50,6 +51,7 @@ par(mfcol = c(2,2))
         lines(subpower_consumption$datetime ,subpower_consumption$Sub_metering_1, type = "l")
         lines(subpower_consumption$datetime,  subpower_consumption$Sub_metering_2, type = "l", col = "red")
         lines(subpower_consumption$datetime,  subpower_consumption$Sub_metering_3, type = "l", col = "blue")
+        legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c("black", "red", "blue"))
         #please note the days are in Portuguese because my R is installed in Portuguese
 
         

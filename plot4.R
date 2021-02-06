@@ -31,6 +31,7 @@ plot(subpower_consumption$datetime, subpower_consumption$Sub_metering_1, type = 
 lines(subpower_consumption$datetime ,subpower_consumption$Sub_metering_1, type = "l")
 lines(subpower_consumption$datetime,  subpower_consumption$Sub_metering_2, type = "l", col = "red")
 lines(subpower_consumption$datetime,  subpower_consumption$Sub_metering_3, type = "l", col = "blue")
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c("black", "red", "blue"))
 #please note the days are in Portuguese because my R is installed in Portuguese
 
 
